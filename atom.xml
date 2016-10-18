@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2016-10-18T14:46:46.936Z</updated>
+  <updated>2016-10-18T14:53:27.025Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://yoursite.com/2016/10/28/%E4%B8%80%E4%B8%AAC%E5%86%99%E7%9A%84%E7%AE%80%E6%98%93%E8%81%8A%E5%A4%A9%E5%AE%A4/"/>
     <id>http://yoursite.com/2016/10/28/一个C写的简易聊天室/</id>
     <published>2016-10-27T16:00:00.000Z</published>
-    <updated>2016-10-18T14:46:46.936Z</updated>
+    <updated>2016-10-18T14:53:27.025Z</updated>
     
     <content type="html">&lt;p&gt;近期有些空闲，正好趁着这段时间做些练手的项目巩固一些Linux下C编程:)&lt;/p&gt;
 &lt;h1 id=&quot;技术&quot;&gt;&lt;a href=&quot;#技术&quot; class=&quot;headerlink&quot; title=&quot;技术&quot;&gt;&lt;/a&gt;技术&lt;/h1&gt;&lt;ul&gt;
@@ -37,11 +37,10 @@
 &lt;ul&gt;
 &lt;li&gt;两个进程，一个进程获得终端输入，一个进程收socket数据输出&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id=&quot;结构定义&quot;&gt;&lt;a href=&quot;#结构定义&quot; class=&quot;headerlink&quot; title=&quot;结构定义&quot;&gt;&lt;/a&gt;结构定义&lt;/h2&gt;&lt;p&gt;&lt;em&gt;消息队列结构&lt;/em&gt;&lt;br&gt;    typedef struct mqmesg{&lt;br&gt;        long mtype;&lt;br&gt;        long mlen;&lt;br&gt;        char mdata[MAXLEN];&lt;br&gt;    }message;&lt;/p&gt;
-&lt;p&gt;用户登录信息结构&lt;br&gt;    typedef struct lginfo{&lt;br&gt;        struct tm        &lt;em&gt;login_time; // 登录时间结构&lt;br&gt;        struct sockaddr_in    &lt;/em&gt;cliaddr; // 客户端IPV4结构&lt;br&gt;        char            login_name[50+1]; // 用户登录名&lt;br&gt;    }loginfo;&lt;/p&gt;
+&lt;h2 id=&quot;结构定义&quot;&gt;&lt;a href=&quot;#结构定义&quot; class=&quot;headerlink&quot; title=&quot;结构定义&quot;&gt;&lt;/a&gt;结构定义&lt;/h2&gt;&lt;p&gt;&lt;em&gt;消息队列结构&lt;/em&gt;&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;typedef struct mqmesg&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	long mtype;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	long mlen;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	char mdata[MAXLEN];&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;message;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;用户登录信息结构&lt;/em&gt;&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;typedef struct lginfo&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	struct tm		*login_time; // 登录时间结构&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	struct sockaddr_in	*cliaddr; // 客户端IPV4结构&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	char			login_name[50+1]; // 用户登录名&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;loginfo;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
 &lt;h1 id=&quot;模块&quot;&gt;&lt;a href=&quot;#模块&quot; class=&quot;headerlink&quot; title=&quot;模块&quot;&gt;&lt;/a&gt;模块&lt;/h1&gt;&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;通用模块 util.c&lt;/p&gt;
-&lt;ul&gt;
+&lt;li&gt;通用模块 util.c&lt;ul&gt;
 &lt;li&gt;ssize_t readn(int, void *, size_t); // 循环read函数，确保收取n字节&lt;/li&gt;
 &lt;li&gt;ssize_t writen(int, void *, size_t); // 循环write函数，确保发送n字节&lt;/li&gt;
 &lt;li&gt;int sendMsg(int, void *, int); // 发送socket封装函数&lt;/li&gt;
@@ -52,199 +51,24 @@
 &lt;li&gt;int tm2DateTimeStr(struct tm &lt;em&gt;, char &lt;/em&gt;); // linux时间tm结构转YYYY-MM-DD HH:MM:SS字符串&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;p&gt;服务端功能模块 servfunc.c&lt;/p&gt;
+&lt;/ul&gt;
 &lt;ul&gt;
+&lt;li&gt;服务端功能模块 servfunc.c&lt;ul&gt;
 &lt;li&gt;int getClientCount(int); // 读取type 1消息代表的客户端数量&lt;/li&gt;
 &lt;li&gt;int putClientCount(int, int); // 向消息队列写入客户端数量&lt;/li&gt;
 &lt;li&gt;int login_serv(int, loginfo *); // 服务端登入处理函数&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;p&gt;客户端功能模块 clifunc.c&lt;/p&gt;
+&lt;/ul&gt;
 &lt;ul&gt;
+&lt;li&gt;客户端功能模块 clifunc.c&lt;ul&gt;
 &lt;li&gt;int login_cli(int); // 客户端登入处理函数&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;h1 id=&quot;实现&quot;&gt;&lt;a href=&quot;#实现&quot; class=&quot;headerlink&quot; title=&quot;实现&quot;&gt;&lt;/a&gt;实现&lt;/h1&gt;&lt;p&gt;&lt;em&gt;server 端&lt;/em&gt;&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;#include &amp;quot;chatroom.h&amp;quot;    
-
-int main(int argc, char *argv[])
-{
-    struct sockaddr_in servaddr, cliaddr;
-    socklen_t cliaddr_len;
-    char buf[MAXLEN+1];
-    char buf2[MAXLEN] = {0};
-    char addr[INET_ADDRSTRLEN];
-    int listenfd,connfd;
-    int i,n,len;
-    int pid;
-    int client_count = 0;
-    int fpid = getpid();    
-
-    listenfd = socket(AF_INET, SOCK_STREAM, 0);
-    bzero(&amp;amp;servaddr, sizeof(servaddr));
-    servaddr.sin_family = AF_INET;
-    servaddr.sin_addr.s_addr = htonl(INADDR_ANY);
-    servaddr.sin_port = htons(SERVPORT);    
-
-    bind(listenfd, (struct sockaddr *)&amp;amp;servaddr, sizeof(servaddr));    
-
-    listen(listenfd, 20);
-    printf(&amp;quot;Accepting connect...\n&amp;quot;);    
-
-    int mq_fd = msgget(IPC_PRIVATE, SVMSG_MODE | IPC_CREAT);
-    printf(&amp;quot;msgid:%d\n&amp;quot;,mq_fd);
-    putClientCount(mq_fd, client_count);
-    message *msg = (message *)malloc(sizeof(message));    
-
-    while(1){
-        cliaddr_len = sizeof(cliaddr);
-        connfd = accept(listenfd, (struct sockaddr *)&amp;amp;cliaddr, &amp;amp;cliaddr_len);
-        client_count = getClientCount(mq_fd);    
-        client_count++;
-        putClientCount(mq_fd, client_count);
-        pid = fork();
-        if(pid&amp;lt;0) printf(&amp;quot;fork err\n&amp;quot;);
-        else if(pid&amp;gt;0){
-            continue;
-        }else{
-            // child
-            printf(&amp;quot;this is child process[%d]\n&amp;quot;, getpid());
-            inet_ntop(AF_INET, &amp;amp;cliaddr.sin_addr, addr, sizeof(addr));
-            printf(&amp;quot;Recieved connection form [%s] at PORT [%d]\n&amp;quot;, addr, ntohs(cliaddr.sin_port));
-            int cliNo = client_count;
-            char welcome[100] = {0};
-            sprintf(welcome, &amp;quot;%s%d%s&amp;quot;, &amp;quot;-----welcome to chat room, current user no: &amp;quot;, client_count, &amp;quot;------&amp;quot;);
-            sendMsg(connfd, welcome, strlen(welcome));    
-
-
-            loginfo *cli_log_info = (loginfo *)malloc(sizeof(loginfo));
-            cli_log_info-&amp;gt;cliaddr = &amp;amp;cliaddr;
-            login_serv(connfd, cli_log_info); // client login    
-
-            int pid2 = fork();
-            if(pid2&amp;lt;0){ printf(&amp;quot;fork err\n&amp;quot;); continue;}
-            else if(pid2&amp;gt;0){
-                while(1){
-                    memset(buf, 0x00, sizeof(buf));
-                    if(recvMsg(connfd, buf, &amp;amp;len)&amp;lt;0){
-                        printf(&amp;quot;The client [%d] closed the connection.\n&amp;quot;, getpid());
-                        kill(pid2, SIGKILL);
-                        break;
-                    }
-                    printf(&amp;quot;CLIENT[%s]PID[%d]:LOGIN_NAME[%s]:LEN[%d]:MSG[%s]\n&amp;quot;, addr, getpid(), cli_log_info-&amp;gt;login_name, len, buf);
-
-                    time_t t = time(NULL);
-                    struct tm *local = localtime(&amp;amp;t);
-                    char tt[19+1] = {0};
-                    tm2DateTimeStr(local, tt);
-
-                    sprintf(buf2, &amp;quot;(%s) %s: %s&amp;quot;, tt, cli_log_info-&amp;gt;login_name, buf);
-                //    strcat(buf, &amp;quot;[B]&amp;quot;);
-    //                printf(&amp;quot;DEBUG: [%d], buf[%s]\n&amp;quot;, strlen(buf), buf);
-                    client_count = getClientCount(mq_fd);
-                    for(i=1;i&amp;lt;=client_count;i++){
-                        if(i==cliNo) continue;
-                        mqMsgSTInit(msg, buf2, strlen(buf2), 10000+i);
-                        sendMq(mq_fd, msg);
-                    }
-                    putClientCount(mq_fd, client_count);
-                }
-            }else{
-                while(1){
-                    mqMsgSTInit(msg, NULL, 0, 10000+cliNo);
-                    if(recvMq(mq_fd, msg)&amp;lt;=0) continue;
-                    else{
-                        sendMsg(connfd, msg-&amp;gt;mdata, msg-&amp;gt;mlen);
-                    }
-                }
-            }
-            client_count = getClientCount(mq_fd);
-            client_count--;
-            putClientCount(mq_fd, client_count);
-            close(connfd);
-            break;
-        }
-    }
-    close(listenfd);
-    free(msg);
-    if(getpid() == fpid){
-        printf(&amp;quot;msgctl----------\n&amp;quot;);
-        msgctl(mq_fd, IPC_RMID, NULL);
-    }    
-
-    return 0;
-}
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;em&gt;client 端&lt;/em&gt;&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;#include &amp;quot;chatroom.h&amp;quot;    
-
-int main(int argc, char *argv[])
-{
-    struct sockaddr_in servaddr;
-    char buf[MAXLEN], buf2[MAXLEN];
-    int sockfd;
-    int n,len,flag;
-    int pid;
-    char servip[15+1];
-    int ret;    
-
-    if(argc == 2)
-    {
-        strcpy(servip, argv[1]);
-    }else{
-        printf(&amp;quot;USAGE: client [serverip]\n&amp;quot;);
-        exit(0);
-    }    
-
-    sockfd = socket(AF_INET, SOCK_STREAM, 0);
-    bzero(&amp;amp;servaddr, sizeof(servaddr));
-    servaddr.sin_family = AF_INET;
-    inet_pton(AF_INET, (const char *)servip, &amp;amp;servaddr.sin_addr);
-    servaddr.sin_port = htons(SERVPORT);    
-
-
-    ret = connect(sockfd, (struct sockaddr *)&amp;amp;servaddr, sizeof(servaddr));
-    if(!ret)
-        printf(&amp;quot;Connect succeed!\n&amp;quot;);
-    else{
-        printf(&amp;quot;Cant connect to the server:%s\n&amp;quot;, servip);
-        exit(1);
-    }    
-
-    // recieve welcome message
-    memset(buf, 0x00, sizeof(buf));
-    recvMsg(sockfd, buf, &amp;amp;len);
-    printf(&amp;quot;%s\n&amp;quot;, buf);    
-
-    // login
-    login_cli(sockfd);    
-
-    printf(&amp;quot;---------------------------------------------------------------\n&amp;quot;);
-
-    pid = fork();
-    if(pid&amp;lt;0){
-        printf(&amp;quot;fork err\n&amp;quot;);
-        exit(1);
-    }else if(pid&amp;gt;0){
-        while(fgets(buf, MAXLEN, stdin)){
-            memset(&amp;amp;buf[strlen(buf)-1], 0, 1); // delete the last \n
-            sendMsg(sockfd, buf, strlen(buf));
-        }
-    }else{
-        while(1){
-            memset(buf2, 0x00, sizeof(buf2));
-            if(recvMsg(sockfd, buf2, &amp;amp;len)&amp;lt;0){
-                printf(&amp;quot;Server [%s] closed connection\n&amp;quot;, servip);
-                break;
-            }
-            printf(&amp;quot;&amp;gt; %s\n&amp;quot;, buf2);
-        }
-    }
-    close(sockfd);    
-
-    return 0;
-}
-&lt;/code&gt;&lt;/pre&gt;&lt;h1 id=&quot;其他&quot;&gt;&lt;a href=&quot;#其他&quot; class=&quot;headerlink&quot; title=&quot;其他&quot;&gt;&lt;/a&gt;其他&lt;/h1&gt;&lt;pre&gt;&lt;code&gt;- 目前已知的几个缺陷：
+&lt;h1 id=&quot;实现&quot;&gt;&lt;a href=&quot;#实现&quot; class=&quot;headerlink&quot; title=&quot;实现&quot;&gt;&lt;/a&gt;实现&lt;/h1&gt;&lt;p&gt;&lt;em&gt;server 端&lt;/em&gt;&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;21&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;22&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;23&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;24&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;25&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;26&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;27&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;28&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;29&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;30&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;31&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;32&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;33&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;34&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;35&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;36&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;37&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;38&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;39&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;40&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;41&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;42&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;43&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;44&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;45&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;46&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;47&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;48&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;49&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;50&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;51&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;52&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;53&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;54&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;55&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;56&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;57&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;58&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;59&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;60&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;61&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;62&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;63&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;64&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;65&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;66&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;67&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;68&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;69&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;70&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;71&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;72&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;73&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;74&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;75&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;76&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;77&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;78&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;79&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;80&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;81&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;82&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;83&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;84&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;85&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;86&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;87&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;88&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;89&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;90&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;91&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;92&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;93&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;94&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;95&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;96&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;97&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;98&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;99&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;100&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;101&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;102&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;103&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;104&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;105&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;106&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;107&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;108&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;109&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;#include &amp;quot;chatroom.h&amp;quot;    &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;int main(int argc, char *argv[])&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	struct sockaddr_in servaddr, cliaddr;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	socklen_t cliaddr_len;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	char buf[MAXLEN+1];&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	char buf2[MAXLEN] = &amp;#123;0&amp;#125;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	char addr[INET_ADDRSTRLEN];&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	int listenfd,connfd;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	int i,n,len;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	int pid;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	int client_count = 0;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	int fpid = getpid();    &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	listenfd = socket(AF_INET, SOCK_STREAM, 0);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	bzero(&amp;amp;servaddr, sizeof(servaddr));&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	servaddr.sin_family = AF_INET;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	servaddr.sin_addr.s_addr = htonl(INADDR_ANY);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	servaddr.sin_port = htons(SERVPORT);    &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	bind(listenfd, (struct sockaddr *)&amp;amp;servaddr, sizeof(servaddr));    &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	listen(listenfd, 20);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	printf(&amp;quot;Accepting connect...\n&amp;quot;);    &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	int mq_fd = msgget(IPC_PRIVATE, SVMSG_MODE | IPC_CREAT);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	printf(&amp;quot;msgid:%d\n&amp;quot;,mq_fd);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	putClientCount(mq_fd, client_count);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	message *msg = (message *)malloc(sizeof(message));    &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	while(1)&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;		cliaddr_len = sizeof(cliaddr);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;		connfd = accept(listenfd, (struct sockaddr *)&amp;amp;cliaddr, &amp;amp;cliaddr_len);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;		client_count = getClientCount(mq_fd);	&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;		client_count++;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;		putClientCount(mq_fd, client_count);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;		pid = fork();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;		if(pid&amp;lt;0) printf(&amp;quot;fork err\n&amp;quot;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;		else if(pid&amp;gt;0)&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;			continue;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;		&amp;#125;else&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;			// child&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;			printf(&amp;quot;this is child process[%d]\n&amp;quot;, getpid());&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;			inet_ntop(AF_INET, &amp;amp;cliaddr.sin_addr, addr, sizeof(addr));&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;			printf(&amp;quot;Recieved connection form [%s] at PORT [%d]\n&amp;quot;, addr, ntohs(cliaddr.sin_port));&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;			int cliNo = client_count;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;			char welcome[100] = &amp;#123;0&amp;#125;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;			sprintf(welcome, &amp;quot;%s%d%s&amp;quot;, &amp;quot;-----welcome to chat room, current user no: &amp;quot;, client_count, &amp;quot;------&amp;quot;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;			sendMsg(connfd, welcome, strlen(welcome));    &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;			loginfo *cli_log_info = (loginfo *)malloc(sizeof(loginfo));&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;			cli_log_info-&amp;gt;cliaddr = &amp;amp;cliaddr;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;			login_serv(connfd, cli_log_info); // client login    &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;			int pid2 = fork();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;			if(pid2&amp;lt;0)&amp;#123; printf(&amp;quot;fork err\n&amp;quot;); continue;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;			else if(pid2&amp;gt;0)&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;				while(1)&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;					memset(buf, 0x00, sizeof(buf));&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;					if(recvMsg(connfd, buf, &amp;amp;len)&amp;lt;0)&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;						printf(&amp;quot;The client [%d] closed the connection.\n&amp;quot;, getpid());&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;						kill(pid2, SIGKILL);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;						break;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;					&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;					printf(&amp;quot;CLIENT[%s]PID[%d]:LOGIN_NAME[%s]:LEN[%d]:MSG[%s]\n&amp;quot;, addr, getpid(), cli_log_info-&amp;gt;login_name, len, buf);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;					&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;					time_t t = time(NULL);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;					struct tm *local = localtime(&amp;amp;t);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;					char tt[19+1] = &amp;#123;0&amp;#125;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;					tm2DateTimeStr(local, tt);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;					&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;					sprintf(buf2, &amp;quot;(%s) %s: %s&amp;quot;, tt, cli_log_info-&amp;gt;login_name, buf);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;				//	strcat(buf, &amp;quot;[B]&amp;quot;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	//				printf(&amp;quot;DEBUG: [%d], buf[%s]\n&amp;quot;, strlen(buf), buf);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;					client_count = getClientCount(mq_fd);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;					for(i=1;i&amp;lt;=client_count;i++)&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;						if(i==cliNo) continue;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;						mqMsgSTInit(msg, buf2, strlen(buf2), 10000+i);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;						sendMq(mq_fd, msg);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;					&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;					putClientCount(mq_fd, client_count);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;				&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;			&amp;#125;else&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;				while(1)&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;					mqMsgSTInit(msg, NULL, 0, 10000+cliNo);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;					if(recvMq(mq_fd, msg)&amp;lt;=0) continue;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;					else&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;						sendMsg(connfd, msg-&amp;gt;mdata, msg-&amp;gt;mlen);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;					&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;				&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;			&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;			client_count = getClientCount(mq_fd);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;			client_count--;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;			putClientCount(mq_fd, client_count);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;			close(connfd);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;			break;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;		&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	close(listenfd);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	free(msg);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	if(getpid() == fpid)&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;		printf(&amp;quot;msgctl----------\n&amp;quot;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;		msgctl(mq_fd, IPC_RMID, NULL);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&amp;#125;    &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	return 0;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;client 端&lt;/em&gt;&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;21&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;22&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;23&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;24&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;25&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;26&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;27&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;28&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;29&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;30&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;31&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;32&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;33&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;34&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;35&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;36&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;37&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;38&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;39&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;40&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;41&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;42&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;43&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;44&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;45&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;46&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;47&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;48&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;49&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;50&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;51&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;52&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;53&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;54&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;55&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;56&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;57&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;58&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;59&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;60&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;61&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;62&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;63&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;64&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;65&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;66&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;67&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;68&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;#include &amp;quot;chatroom.h&amp;quot;    &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;int main(int argc, char *argv[])&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	struct sockaddr_in servaddr;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	char buf[MAXLEN], buf2[MAXLEN];&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	int sockfd;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	int n,len,flag;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	int pid;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	char servip[15+1];&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	int ret;    &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	if(argc == 2)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;		strcpy(servip, argv[1]);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&amp;#125;else&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;		printf(&amp;quot;USAGE: client [serverip]\n&amp;quot;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;		exit(0);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&amp;#125;    &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	sockfd = socket(AF_INET, SOCK_STREAM, 0);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	bzero(&amp;amp;servaddr, sizeof(servaddr));&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	servaddr.sin_family = AF_INET;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	inet_pton(AF_INET, (const char *)servip, &amp;amp;servaddr.sin_addr);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	servaddr.sin_port = htons(SERVPORT);    &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	ret = connect(sockfd, (struct sockaddr *)&amp;amp;servaddr, sizeof(servaddr));&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	if(!ret)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;		printf(&amp;quot;Connect succeed!\n&amp;quot;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	else&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;		printf(&amp;quot;Cant connect to the server:%s\n&amp;quot;, servip);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;		exit(1);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&amp;#125;    &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	// recieve welcome message&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	memset(buf, 0x00, sizeof(buf));&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	recvMsg(sockfd, buf, &amp;amp;len);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	printf(&amp;quot;%s\n&amp;quot;, buf);    &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	// login&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	login_cli(sockfd);    &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	printf(&amp;quot;---------------------------------------------------------------\n&amp;quot;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	pid = fork();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	if(pid&amp;lt;0)&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;		printf(&amp;quot;fork err\n&amp;quot;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;		exit(1);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&amp;#125;else if(pid&amp;gt;0)&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;		while(fgets(buf, MAXLEN, stdin))&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;			memset(&amp;amp;buf[strlen(buf)-1], 0, 1); // delete the last \n&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;			sendMsg(sockfd, buf, strlen(buf));&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;		&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&amp;#125;else&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;		while(1)&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;			memset(buf2, 0x00, sizeof(buf2));&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;			if(recvMsg(sockfd, buf2, &amp;amp;len)&amp;lt;0)&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;				printf(&amp;quot;Server [%s] closed connection\n&amp;quot;, servip);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;				break;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;			&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;			printf(&amp;quot;&amp;gt; %s\n&amp;quot;, buf2);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;		&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	close(sockfd);    &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	return 0;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;h1 id=&quot;其他&quot;&gt;&lt;a href=&quot;#其他&quot; class=&quot;headerlink&quot; title=&quot;其他&quot;&gt;&lt;/a&gt;其他&lt;/h1&gt;&lt;pre&gt;&lt;code&gt;- 目前已知的几个缺陷：
     - 客户端终端输入输出在一起，有时候输入时会有输出冒出来
     - Ctrl-C kill掉服务端后，建立的消息队列没有删除
 &lt;/code&gt;&lt;/pre&gt;</content>
