@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2016-10-18T14:40:25.804Z</updated>
+  <updated>2016-10-18T14:46:46.936Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -20,37 +20,52 @@
     <link href="http://yoursite.com/2016/10/28/%E4%B8%80%E4%B8%AAC%E5%86%99%E7%9A%84%E7%AE%80%E6%98%93%E8%81%8A%E5%A4%A9%E5%AE%A4/"/>
     <id>http://yoursite.com/2016/10/28/一个C写的简易聊天室/</id>
     <published>2016-10-27T16:00:00.000Z</published>
-    <updated>2016-10-18T14:40:25.804Z</updated>
+    <updated>2016-10-18T14:46:46.936Z</updated>
     
     <content type="html">&lt;p&gt;近期有些空闲，正好趁着这段时间做些练手的项目巩固一些Linux下C编程:)&lt;/p&gt;
-&lt;h1 id=&quot;技术&quot;&gt;&lt;a href=&quot;#技术&quot; class=&quot;headerlink&quot; title=&quot;技术&quot;&gt;&lt;/a&gt;技术&lt;/h1&gt;&lt;pre&gt;&lt;code&gt;- TCP Socket编程
-- SYS V消息队列
-&lt;/code&gt;&lt;/pre&gt;&lt;h1 id=&quot;设计&quot;&gt;&lt;a href=&quot;#设计&quot; class=&quot;headerlink&quot; title=&quot;设计&quot;&gt;&lt;/a&gt;设计&lt;/h1&gt;&lt;p&gt;几乎没有设计。。简单的服务端/客户端设计，使用TCP传输数据，消息队列做进程间通信。&lt;/p&gt;
+&lt;h1 id=&quot;技术&quot;&gt;&lt;a href=&quot;#技术&quot; class=&quot;headerlink&quot; title=&quot;技术&quot;&gt;&lt;/a&gt;技术&lt;/h1&gt;&lt;ul&gt;
+&lt;li&gt;TCP Socket编程&lt;/li&gt;
+&lt;li&gt;SYS V消息队列&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&quot;设计&quot;&gt;&lt;a href=&quot;#设计&quot; class=&quot;headerlink&quot; title=&quot;设计&quot;&gt;&lt;/a&gt;设计&lt;/h1&gt;&lt;p&gt;几乎没有设计。。简单的服务端/客户端设计，使用TCP传输数据，消息队列做进程间通信。&lt;/p&gt;
 &lt;h2 id=&quot;Server-Client&quot;&gt;&lt;a href=&quot;#Server-Client&quot; class=&quot;headerlink&quot; title=&quot;Server/Client&quot;&gt;&lt;/a&gt;Server/Client&lt;/h2&gt;&lt;p&gt;&lt;em&gt;server端&lt;/em&gt;&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;- 主进程监听，子进程处理每个客户端
-- 子进程的子进程收其他进程消息发送给当前客户端
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;em&gt;client端&lt;/em&gt;&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;- 两个进程，一个进程获得终端输入，一个进程收socket数据输出
-&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&quot;结构定义&quot;&gt;&lt;a href=&quot;#结构定义&quot; class=&quot;headerlink&quot; title=&quot;结构定义&quot;&gt;&lt;/a&gt;结构定义&lt;/h2&gt;&lt;p&gt;消息队列结构&lt;br&gt;    typedef struct mqmesg{&lt;br&gt;        long mtype;&lt;br&gt;        long mlen;&lt;br&gt;        char mdata[MAXLEN];&lt;br&gt;    }message;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;主进程监听，子进程处理每个客户端&lt;/li&gt;
+&lt;li&gt;子进程的子进程收其他进程消息发送给当前客户端&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;em&gt;client端&lt;/em&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;两个进程，一个进程获得终端输入，一个进程收socket数据输出&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;结构定义&quot;&gt;&lt;a href=&quot;#结构定义&quot; class=&quot;headerlink&quot; title=&quot;结构定义&quot;&gt;&lt;/a&gt;结构定义&lt;/h2&gt;&lt;p&gt;&lt;em&gt;消息队列结构&lt;/em&gt;&lt;br&gt;    typedef struct mqmesg{&lt;br&gt;        long mtype;&lt;br&gt;        long mlen;&lt;br&gt;        char mdata[MAXLEN];&lt;br&gt;    }message;&lt;/p&gt;
 &lt;p&gt;用户登录信息结构&lt;br&gt;    typedef struct lginfo{&lt;br&gt;        struct tm        &lt;em&gt;login_time; // 登录时间结构&lt;br&gt;        struct sockaddr_in    &lt;/em&gt;cliaddr; // 客户端IPV4结构&lt;br&gt;        char            login_name[50+1]; // 用户登录名&lt;br&gt;    }loginfo;&lt;/p&gt;
-&lt;h1 id=&quot;模块&quot;&gt;&lt;a href=&quot;#模块&quot; class=&quot;headerlink&quot; title=&quot;模块&quot;&gt;&lt;/a&gt;模块&lt;/h1&gt;&lt;pre&gt;&lt;code&gt;- 通用模块 util.c
-    - ssize_t readn(int, void *, size_t); // 循环read函数，确保收取n字节
-    - ssize_t writen(int, void *, size_t); // 循环write函数，确保发送n字节
-    - int sendMsg(int, void *, int); // 发送socket封装函数
-    - int recvMsg(int, void *, int *); // 接收socket封装函数
-    - int mqMsgSTInit(message *, char *, long, long); // 消息队列结构赋值函数
-    - ssize_t sendMq(int, message *); // 发送消息队列封装函数
-    - ssize_t recvMq(int, message *); // 接收消息队列封装函数
-    - int tm2DateTimeStr(struct tm *, char *); // linux时间tm结构转YYYY-MM-DD HH:MM:SS字符串
-
-- 服务端功能模块 servfunc.c
-    - int getClientCount(int); // 读取type 1消息代表的客户端数量
-    - int putClientCount(int, int); // 向消息队列写入客户端数量
-    - int login_serv(int, loginfo *); // 服务端登入处理函数 
-
-- 客户端功能模块 clifunc.c
-    - int login_cli(int); // 客户端登入处理函数
-&lt;/code&gt;&lt;/pre&gt;&lt;h1 id=&quot;实现&quot;&gt;&lt;a href=&quot;#实现&quot; class=&quot;headerlink&quot; title=&quot;实现&quot;&gt;&lt;/a&gt;实现&lt;/h1&gt;&lt;p&gt;&lt;em&gt;server 端&lt;/em&gt;&lt;/p&gt;
+&lt;h1 id=&quot;模块&quot;&gt;&lt;a href=&quot;#模块&quot; class=&quot;headerlink&quot; title=&quot;模块&quot;&gt;&lt;/a&gt;模块&lt;/h1&gt;&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;通用模块 util.c&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;ssize_t readn(int, void *, size_t); // 循环read函数，确保收取n字节&lt;/li&gt;
+&lt;li&gt;ssize_t writen(int, void *, size_t); // 循环write函数，确保发送n字节&lt;/li&gt;
+&lt;li&gt;int sendMsg(int, void *, int); // 发送socket封装函数&lt;/li&gt;
+&lt;li&gt;int recvMsg(int, void &lt;em&gt;, int &lt;/em&gt;); // 接收socket封装函数&lt;/li&gt;
+&lt;li&gt;int mqMsgSTInit(message &lt;em&gt;, char &lt;/em&gt;, long, long); // 消息队列结构赋值函数&lt;/li&gt;
+&lt;li&gt;ssize_t sendMq(int, message *); // 发送消息队列封装函数&lt;/li&gt;
+&lt;li&gt;ssize_t recvMq(int, message *); // 接收消息队列封装函数&lt;/li&gt;
+&lt;li&gt;int tm2DateTimeStr(struct tm &lt;em&gt;, char &lt;/em&gt;); // linux时间tm结构转YYYY-MM-DD HH:MM:SS字符串&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;服务端功能模块 servfunc.c&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;int getClientCount(int); // 读取type 1消息代表的客户端数量&lt;/li&gt;
+&lt;li&gt;int putClientCount(int, int); // 向消息队列写入客户端数量&lt;/li&gt;
+&lt;li&gt;int login_serv(int, loginfo *); // 服务端登入处理函数&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;客户端功能模块 clifunc.c&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;int login_cli(int); // 客户端登入处理函数&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&quot;实现&quot;&gt;&lt;a href=&quot;#实现&quot; class=&quot;headerlink&quot; title=&quot;实现&quot;&gt;&lt;/a&gt;实现&lt;/h1&gt;&lt;p&gt;&lt;em&gt;server 端&lt;/em&gt;&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;#include &amp;quot;chatroom.h&amp;quot;    
 
 int main(int argc, char *argv[])
@@ -237,8 +252,9 @@ int main(int argc, char *argv[])
     <summary type="html">
     
       &lt;p&gt;近期有些空闲，正好趁着这段时间做些练手的项目巩固一些Linux下C编程:)&lt;/p&gt;
-&lt;h1 id=&quot;技术&quot;&gt;&lt;a href=&quot;#技术&quot; class=&quot;headerlink&quot; title=&quot;技术&quot;&gt;&lt;/a&gt;技术&lt;/h1&gt;&lt;pre&gt;&lt;code&gt;- TCP Socket编程
-- 
+&lt;h1 id=&quot;技术&quot;&gt;&lt;a href=&quot;#技术&quot; class=&quot;headerlink&quot; title=&quot;技术&quot;&gt;&lt;/a&gt;技术&lt;/h1&gt;&lt;ul&gt;
+&lt;li&gt;TCP Socket编程&lt;/li&gt;
+&lt;
     
     </summary>
     

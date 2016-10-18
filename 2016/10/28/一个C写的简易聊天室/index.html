@@ -87,39 +87,54 @@
 
 
 <meta name="description" content="近期有些空闲，正好趁着这段时间做些练手的项目巩固一些Linux下C编程:)
-技术- TCP Socket编程
-- SYS V消息队列
+技术
+TCP Socket编程
+SYS V消息队列
+
 设计几乎没有设计。。简单的服务端/客户端设计，使用TCP传输数据，消息队列做进程间通信。
 Server/Clientserver端
-- 主进程监听，子进程处理每个客户端
-- 子进程的子进程收其他进程消息发送给当前客户端
+
+主进程监听，子进程处理每个客户端
+子进程的子进程收其他进程消息发送给当前客户端
+
 client端
-- 两个进程，一个进程获得终端">
+
+两个进程，一个进程获得终端输入，一个">
 <meta property="og:type" content="article">
 <meta property="og:title" content="一个C写的简易聊天室">
 <meta property="og:url" content="http://yoursite.com/2016/10/28/一个C写的简易聊天室/index.html">
 <meta property="og:site_name" content="Littlekid's blog">
 <meta property="og:description" content="近期有些空闲，正好趁着这段时间做些练手的项目巩固一些Linux下C编程:)
-技术- TCP Socket编程
-- SYS V消息队列
+技术
+TCP Socket编程
+SYS V消息队列
+
 设计几乎没有设计。。简单的服务端/客户端设计，使用TCP传输数据，消息队列做进程间通信。
 Server/Clientserver端
-- 主进程监听，子进程处理每个客户端
-- 子进程的子进程收其他进程消息发送给当前客户端
+
+主进程监听，子进程处理每个客户端
+子进程的子进程收其他进程消息发送给当前客户端
+
 client端
-- 两个进程，一个进程获得终端">
-<meta property="og:updated_time" content="2016-10-18T14:40:25.804Z">
+
+两个进程，一个进程获得终端输入，一个">
+<meta property="og:updated_time" content="2016-10-18T14:46:46.936Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="一个C写的简易聊天室">
 <meta name="twitter:description" content="近期有些空闲，正好趁着这段时间做些练手的项目巩固一些Linux下C编程:)
-技术- TCP Socket编程
-- SYS V消息队列
+技术
+TCP Socket编程
+SYS V消息队列
+
 设计几乎没有设计。。简单的服务端/客户端设计，使用TCP传输数据，消息队列做进程间通信。
 Server/Clientserver端
-- 主进程监听，子进程处理每个客户端
-- 子进程的子进程收其他进程消息发送给当前客户端
+
+主进程监听，子进程处理每个客户端
+子进程的子进程收其他进程消息发送给当前客户端
+
 client端
-- 两个进程，一个进程获得终端">
+
+两个进程，一个进程获得终端输入，一个">
 
 
 
@@ -403,34 +418,49 @@ client端
 
       
         <p>近期有些空闲，正好趁着这段时间做些练手的项目巩固一些Linux下C编程:)</p>
-<h1 id="技术"><a href="#技术" class="headerlink" title="技术"></a>技术</h1><pre><code>- TCP Socket编程
-- SYS V消息队列
-</code></pre><h1 id="设计"><a href="#设计" class="headerlink" title="设计"></a>设计</h1><p>几乎没有设计。。简单的服务端/客户端设计，使用TCP传输数据，消息队列做进程间通信。</p>
+<h1 id="技术"><a href="#技术" class="headerlink" title="技术"></a>技术</h1><ul>
+<li>TCP Socket编程</li>
+<li>SYS V消息队列</li>
+</ul>
+<h1 id="设计"><a href="#设计" class="headerlink" title="设计"></a>设计</h1><p>几乎没有设计。。简单的服务端/客户端设计，使用TCP传输数据，消息队列做进程间通信。</p>
 <h2 id="Server-Client"><a href="#Server-Client" class="headerlink" title="Server/Client"></a>Server/Client</h2><p><em>server端</em></p>
-<pre><code>- 主进程监听，子进程处理每个客户端
-- 子进程的子进程收其他进程消息发送给当前客户端
-</code></pre><p><em>client端</em></p>
-<pre><code>- 两个进程，一个进程获得终端输入，一个进程收socket数据输出
-</code></pre><h2 id="结构定义"><a href="#结构定义" class="headerlink" title="结构定义"></a>结构定义</h2><p>消息队列结构<br>    typedef struct mqmesg{<br>        long mtype;<br>        long mlen;<br>        char mdata[MAXLEN];<br>    }message;</p>
+<ul>
+<li>主进程监听，子进程处理每个客户端</li>
+<li>子进程的子进程收其他进程消息发送给当前客户端</li>
+</ul>
+<p><em>client端</em></p>
+<ul>
+<li>两个进程，一个进程获得终端输入，一个进程收socket数据输出</li>
+</ul>
+<h2 id="结构定义"><a href="#结构定义" class="headerlink" title="结构定义"></a>结构定义</h2><p><em>消息队列结构</em><br>    typedef struct mqmesg{<br>        long mtype;<br>        long mlen;<br>        char mdata[MAXLEN];<br>    }message;</p>
 <p>用户登录信息结构<br>    typedef struct lginfo{<br>        struct tm        <em>login_time; // 登录时间结构<br>        struct sockaddr_in    </em>cliaddr; // 客户端IPV4结构<br>        char            login_name[50+1]; // 用户登录名<br>    }loginfo;</p>
-<h1 id="模块"><a href="#模块" class="headerlink" title="模块"></a>模块</h1><pre><code>- 通用模块 util.c
-    - ssize_t readn(int, void *, size_t); // 循环read函数，确保收取n字节
-    - ssize_t writen(int, void *, size_t); // 循环write函数，确保发送n字节
-    - int sendMsg(int, void *, int); // 发送socket封装函数
-    - int recvMsg(int, void *, int *); // 接收socket封装函数
-    - int mqMsgSTInit(message *, char *, long, long); // 消息队列结构赋值函数
-    - ssize_t sendMq(int, message *); // 发送消息队列封装函数
-    - ssize_t recvMq(int, message *); // 接收消息队列封装函数
-    - int tm2DateTimeStr(struct tm *, char *); // linux时间tm结构转YYYY-MM-DD HH:MM:SS字符串
-
-- 服务端功能模块 servfunc.c
-    - int getClientCount(int); // 读取type 1消息代表的客户端数量
-    - int putClientCount(int, int); // 向消息队列写入客户端数量
-    - int login_serv(int, loginfo *); // 服务端登入处理函数 
-
-- 客户端功能模块 clifunc.c
-    - int login_cli(int); // 客户端登入处理函数
-</code></pre><h1 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h1><p><em>server 端</em></p>
+<h1 id="模块"><a href="#模块" class="headerlink" title="模块"></a>模块</h1><ul>
+<li><p>通用模块 util.c</p>
+<ul>
+<li>ssize_t readn(int, void *, size_t); // 循环read函数，确保收取n字节</li>
+<li>ssize_t writen(int, void *, size_t); // 循环write函数，确保发送n字节</li>
+<li>int sendMsg(int, void *, int); // 发送socket封装函数</li>
+<li>int recvMsg(int, void <em>, int </em>); // 接收socket封装函数</li>
+<li>int mqMsgSTInit(message <em>, char </em>, long, long); // 消息队列结构赋值函数</li>
+<li>ssize_t sendMq(int, message *); // 发送消息队列封装函数</li>
+<li>ssize_t recvMq(int, message *); // 接收消息队列封装函数</li>
+<li>int tm2DateTimeStr(struct tm <em>, char </em>); // linux时间tm结构转YYYY-MM-DD HH:MM:SS字符串</li>
+</ul>
+</li>
+<li><p>服务端功能模块 servfunc.c</p>
+<ul>
+<li>int getClientCount(int); // 读取type 1消息代表的客户端数量</li>
+<li>int putClientCount(int, int); // 向消息队列写入客户端数量</li>
+<li>int login_serv(int, loginfo *); // 服务端登入处理函数</li>
+</ul>
+</li>
+<li><p>客户端功能模块 clifunc.c</p>
+<ul>
+<li>int login_cli(int); // 客户端登入处理函数</li>
+</ul>
+</li>
+</ul>
+<h1 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h1><p><em>server 端</em></p>
 <pre><code>#include &quot;chatroom.h&quot;    
 
 int main(int argc, char *argv[])
