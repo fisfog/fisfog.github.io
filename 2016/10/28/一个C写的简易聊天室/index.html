@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="杂感,童年," />
+  <meta name="keywords" content="Linux,C," />
 
 
 
@@ -86,30 +86,40 @@
 
 
 
-<meta name="description" content="博客前几天突然想起来自己还有个博客，于是兴冲冲地重新搭起Hexo来，但是我愚蠢地把github远程仓库的备份给覆盖了。我都给自己蠢哭了。
-值得庆幸的是，由于我比xiang较dang懒，之前的站点上也没几篇文章，而且部分在作业部落上也有备份。
-这两天重新弄了一下这个博客，用了个比较简洁漂亮的主题。
-Just like a littlekid大学的时候，因为我长的比较年轻，我有个外号叫“小孩”。
-我觉">
+<meta name="description" content="近期有些空闲，正好趁着这段时间做些练手的项目巩固一些Linux下C编程:)
+技术- TCP Socket编程
+- SYS V消息队列
+设计几乎没有设计。。简单的服务端/客户端设计，使用TCP传输数据，消息队列做进程间通信。
+Server/Clientserver端
+- 主进程监听，子进程处理每个客户端
+- 子进程的子进程收其他进程消息发送给当前客户端
+client端
+- 两个进程，一个进程获得终端">
 <meta property="og:type" content="article">
-<meta property="og:title" content="永远像个孩子">
-<meta property="og:url" content="http://yoursite.com/2016/05/25/永远像个孩子/index.html">
+<meta property="og:title" content="一个C写的简易聊天室">
+<meta property="og:url" content="http://yoursite.com/2016/10/28/一个C写的简易聊天室/index.html">
 <meta property="og:site_name" content="Littlekid's blog">
-<meta property="og:description" content="博客前几天突然想起来自己还有个博客，于是兴冲冲地重新搭起Hexo来，但是我愚蠢地把github远程仓库的备份给覆盖了。我都给自己蠢哭了。
-值得庆幸的是，由于我比xiang较dang懒，之前的站点上也没几篇文章，而且部分在作业部落上也有备份。
-这两天重新弄了一下这个博客，用了个比较简洁漂亮的主题。
-Just like a littlekid大学的时候，因为我长的比较年轻，我有个外号叫“小孩”。
-我觉">
-<meta property="og:image" content="http://yoursite.com/\images\jllk\244.jpg">
-<meta property="og:updated_time" content="2016-05-25T08:18:20.968Z">
+<meta property="og:description" content="近期有些空闲，正好趁着这段时间做些练手的项目巩固一些Linux下C编程:)
+技术- TCP Socket编程
+- SYS V消息队列
+设计几乎没有设计。。简单的服务端/客户端设计，使用TCP传输数据，消息队列做进程间通信。
+Server/Clientserver端
+- 主进程监听，子进程处理每个客户端
+- 子进程的子进程收其他进程消息发送给当前客户端
+client端
+- 两个进程，一个进程获得终端">
+<meta property="og:updated_time" content="2016-10-18T14:40:25.804Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="永远像个孩子">
-<meta name="twitter:description" content="博客前几天突然想起来自己还有个博客，于是兴冲冲地重新搭起Hexo来，但是我愚蠢地把github远程仓库的备份给覆盖了。我都给自己蠢哭了。
-值得庆幸的是，由于我比xiang较dang懒，之前的站点上也没几篇文章，而且部分在作业部落上也有备份。
-这两天重新弄了一下这个博客，用了个比较简洁漂亮的主题。
-Just like a littlekid大学的时候，因为我长的比较年轻，我有个外号叫“小孩”。
-我觉">
-<meta name="twitter:image" content="http://yoursite.com/\images\jllk\244.jpg">
+<meta name="twitter:title" content="一个C写的简易聊天室">
+<meta name="twitter:description" content="近期有些空闲，正好趁着这段时间做些练手的项目巩固一些Linux下C编程:)
+技术- TCP Socket编程
+- SYS V消息队列
+设计几乎没有设计。。简单的服务端/客户端设计，使用TCP传输数据，消息队列做进程间通信。
+Server/Clientserver端
+- 主进程监听，子进程处理每个客户端
+- 子进程的子进程收其他进程消息发送给当前客户端
+client端
+- 两个进程，一个进程获得终端">
 
 
 
@@ -127,7 +137,7 @@ Just like a littlekid大学的时候，因为我长的比较年轻，我有个�
   };
 </script>
 
-  <title> 永远像个孩子 | Littlekid's blog </title>
+  <title> 一个C写的简易聊天室 | Littlekid's blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -317,7 +327,7 @@ Just like a littlekid大学的时候，因为我长的比较年轻，我有个�
             
             
               
-                永远像个孩子
+                一个C写的简易聊天室
               
             
           </h1>
@@ -329,8 +339,8 @@ Just like a littlekid大学的时候，因为我长的比较年轻，我有个�
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-05-25T00:00:00+08:00" content="2016-05-25">
-              2016-05-25
+            <time itemprop="dateCreated" datetime="2016-10-28T00:00:00+08:00" content="2016-10-28">
+              2016-10-28
             </time>
           </span>
 
@@ -343,8 +353,8 @@ Just like a littlekid大学的时候，因为我长的比较年轻，我有个�
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/生活/" itemprop="url" rel="index">
-                    <span itemprop="name">生活</span>
+                  <a href="/categories/programing/" itemprop="url" rel="index">
+                    <span itemprop="name">programing</span>
                   </a>
                 </span>
 
@@ -359,8 +369,8 @@ Just like a littlekid大学的时候，因为我长的比较年轻，我有个�
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/05/25/永远像个孩子/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/05/25/永远像个孩子/" itemprop="commentsCount"></span>
+                <a href="/2016/10/28/一个C写的简易聊天室/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/10/28/一个C写的简易聊天室/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -370,7 +380,7 @@ Just like a littlekid大学的时候，因为我长的比较年轻，我有个�
 
           
           
-             <span id="/2016/05/25/永远像个孩子/" class="leancloud_visitors" data-flag-title="永远像个孩子">
+             <span id="/2016/10/28/一个C写的简易聊天室/" class="leancloud_visitors" data-flag-title="一个C写的简易聊天室">
                &nbsp; | &nbsp;
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -392,19 +402,217 @@ Just like a littlekid大学的时候，因为我长的比较年轻，我有个�
       
 
       
-        <h1 id="博客"><a href="#博客" class="headerlink" title="博客"></a>博客</h1><p>前几天突然想起来自己还有个博客，于是兴冲冲地重新搭起Hexo来，但是我愚蠢地把github远程仓库的备份给覆盖了。我都给自己蠢哭了。</p>
-<p>值得庆幸的是，由于我比xiang较dang懒，之前的站点上也没几篇文章，而且部分在<a href="https://www.zybuluo.com" target="_blank" rel="external">作业部落</a>上也有备份。</p>
-<p>这两天重新弄了一下这个博客，用了个比较简洁漂亮的主题。</p>
-<h1 id="Just-like-a-littlekid"><a href="#Just-like-a-littlekid" class="headerlink" title="Just like a littlekid"></a>Just like a littlekid</h1><p>大学的时候，因为我长的比较年轻，我有个外号叫“小孩”。</p>
-<p>我觉得这个外号不错。</p>
-<p>在这个年纪能活得像个孩子是最美好不过的了。因为可以无耻地逃避作为成年人的责任，可以穿着“理想主义”的盔甲横冲直撞。</p>
-<p>但人不可能总为自己活着，总要成熟。</p>
-<p>希望自己在人生的丛林中</p>
-<blockquote>
-<p>不忘初心，Just like a littlekid</p>
-</blockquote>
-<p><img src="\images\jllk\244.jpg" alt="rock"></p>
+        <p>近期有些空闲，正好趁着这段时间做些练手的项目巩固一些Linux下C编程:)</p>
+<h1 id="技术"><a href="#技术" class="headerlink" title="技术"></a>技术</h1><pre><code>- TCP Socket编程
+- SYS V消息队列
+</code></pre><h1 id="设计"><a href="#设计" class="headerlink" title="设计"></a>设计</h1><p>几乎没有设计。。简单的服务端/客户端设计，使用TCP传输数据，消息队列做进程间通信。</p>
+<h2 id="Server-Client"><a href="#Server-Client" class="headerlink" title="Server/Client"></a>Server/Client</h2><p><em>server端</em></p>
+<pre><code>- 主进程监听，子进程处理每个客户端
+- 子进程的子进程收其他进程消息发送给当前客户端
+</code></pre><p><em>client端</em></p>
+<pre><code>- 两个进程，一个进程获得终端输入，一个进程收socket数据输出
+</code></pre><h2 id="结构定义"><a href="#结构定义" class="headerlink" title="结构定义"></a>结构定义</h2><p>消息队列结构<br>    typedef struct mqmesg{<br>        long mtype;<br>        long mlen;<br>        char mdata[MAXLEN];<br>    }message;</p>
+<p>用户登录信息结构<br>    typedef struct lginfo{<br>        struct tm        <em>login_time; // 登录时间结构<br>        struct sockaddr_in    </em>cliaddr; // 客户端IPV4结构<br>        char            login_name[50+1]; // 用户登录名<br>    }loginfo;</p>
+<h1 id="模块"><a href="#模块" class="headerlink" title="模块"></a>模块</h1><pre><code>- 通用模块 util.c
+    - ssize_t readn(int, void *, size_t); // 循环read函数，确保收取n字节
+    - ssize_t writen(int, void *, size_t); // 循环write函数，确保发送n字节
+    - int sendMsg(int, void *, int); // 发送socket封装函数
+    - int recvMsg(int, void *, int *); // 接收socket封装函数
+    - int mqMsgSTInit(message *, char *, long, long); // 消息队列结构赋值函数
+    - ssize_t sendMq(int, message *); // 发送消息队列封装函数
+    - ssize_t recvMq(int, message *); // 接收消息队列封装函数
+    - int tm2DateTimeStr(struct tm *, char *); // linux时间tm结构转YYYY-MM-DD HH:MM:SS字符串
 
+- 服务端功能模块 servfunc.c
+    - int getClientCount(int); // 读取type 1消息代表的客户端数量
+    - int putClientCount(int, int); // 向消息队列写入客户端数量
+    - int login_serv(int, loginfo *); // 服务端登入处理函数 
+
+- 客户端功能模块 clifunc.c
+    - int login_cli(int); // 客户端登入处理函数
+</code></pre><h1 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h1><p><em>server 端</em></p>
+<pre><code>#include &quot;chatroom.h&quot;    
+
+int main(int argc, char *argv[])
+{
+    struct sockaddr_in servaddr, cliaddr;
+    socklen_t cliaddr_len;
+    char buf[MAXLEN+1];
+    char buf2[MAXLEN] = {0};
+    char addr[INET_ADDRSTRLEN];
+    int listenfd,connfd;
+    int i,n,len;
+    int pid;
+    int client_count = 0;
+    int fpid = getpid();    
+
+    listenfd = socket(AF_INET, SOCK_STREAM, 0);
+    bzero(&amp;servaddr, sizeof(servaddr));
+    servaddr.sin_family = AF_INET;
+    servaddr.sin_addr.s_addr = htonl(INADDR_ANY);
+    servaddr.sin_port = htons(SERVPORT);    
+
+    bind(listenfd, (struct sockaddr *)&amp;servaddr, sizeof(servaddr));    
+
+    listen(listenfd, 20);
+    printf(&quot;Accepting connect...\n&quot;);    
+
+    int mq_fd = msgget(IPC_PRIVATE, SVMSG_MODE | IPC_CREAT);
+    printf(&quot;msgid:%d\n&quot;,mq_fd);
+    putClientCount(mq_fd, client_count);
+    message *msg = (message *)malloc(sizeof(message));    
+
+    while(1){
+        cliaddr_len = sizeof(cliaddr);
+        connfd = accept(listenfd, (struct sockaddr *)&amp;cliaddr, &amp;cliaddr_len);
+        client_count = getClientCount(mq_fd);    
+        client_count++;
+        putClientCount(mq_fd, client_count);
+        pid = fork();
+        if(pid&lt;0) printf(&quot;fork err\n&quot;);
+        else if(pid&gt;0){
+            continue;
+        }else{
+            // child
+            printf(&quot;this is child process[%d]\n&quot;, getpid());
+            inet_ntop(AF_INET, &amp;cliaddr.sin_addr, addr, sizeof(addr));
+            printf(&quot;Recieved connection form [%s] at PORT [%d]\n&quot;, addr, ntohs(cliaddr.sin_port));
+            int cliNo = client_count;
+            char welcome[100] = {0};
+            sprintf(welcome, &quot;%s%d%s&quot;, &quot;-----welcome to chat room, current user no: &quot;, client_count, &quot;------&quot;);
+            sendMsg(connfd, welcome, strlen(welcome));    
+
+
+            loginfo *cli_log_info = (loginfo *)malloc(sizeof(loginfo));
+            cli_log_info-&gt;cliaddr = &amp;cliaddr;
+            login_serv(connfd, cli_log_info); // client login    
+
+            int pid2 = fork();
+            if(pid2&lt;0){ printf(&quot;fork err\n&quot;); continue;}
+            else if(pid2&gt;0){
+                while(1){
+                    memset(buf, 0x00, sizeof(buf));
+                    if(recvMsg(connfd, buf, &amp;len)&lt;0){
+                        printf(&quot;The client [%d] closed the connection.\n&quot;, getpid());
+                        kill(pid2, SIGKILL);
+                        break;
+                    }
+                    printf(&quot;CLIENT[%s]PID[%d]:LOGIN_NAME[%s]:LEN[%d]:MSG[%s]\n&quot;, addr, getpid(), cli_log_info-&gt;login_name, len, buf);
+
+                    time_t t = time(NULL);
+                    struct tm *local = localtime(&amp;t);
+                    char tt[19+1] = {0};
+                    tm2DateTimeStr(local, tt);
+
+                    sprintf(buf2, &quot;(%s) %s: %s&quot;, tt, cli_log_info-&gt;login_name, buf);
+                //    strcat(buf, &quot;[B]&quot;);
+    //                printf(&quot;DEBUG: [%d], buf[%s]\n&quot;, strlen(buf), buf);
+                    client_count = getClientCount(mq_fd);
+                    for(i=1;i&lt;=client_count;i++){
+                        if(i==cliNo) continue;
+                        mqMsgSTInit(msg, buf2, strlen(buf2), 10000+i);
+                        sendMq(mq_fd, msg);
+                    }
+                    putClientCount(mq_fd, client_count);
+                }
+            }else{
+                while(1){
+                    mqMsgSTInit(msg, NULL, 0, 10000+cliNo);
+                    if(recvMq(mq_fd, msg)&lt;=0) continue;
+                    else{
+                        sendMsg(connfd, msg-&gt;mdata, msg-&gt;mlen);
+                    }
+                }
+            }
+            client_count = getClientCount(mq_fd);
+            client_count--;
+            putClientCount(mq_fd, client_count);
+            close(connfd);
+            break;
+        }
+    }
+    close(listenfd);
+    free(msg);
+    if(getpid() == fpid){
+        printf(&quot;msgctl----------\n&quot;);
+        msgctl(mq_fd, IPC_RMID, NULL);
+    }    
+
+    return 0;
+}
+</code></pre><p><em>client 端</em></p>
+<pre><code>#include &quot;chatroom.h&quot;    
+
+int main(int argc, char *argv[])
+{
+    struct sockaddr_in servaddr;
+    char buf[MAXLEN], buf2[MAXLEN];
+    int sockfd;
+    int n,len,flag;
+    int pid;
+    char servip[15+1];
+    int ret;    
+
+    if(argc == 2)
+    {
+        strcpy(servip, argv[1]);
+    }else{
+        printf(&quot;USAGE: client [serverip]\n&quot;);
+        exit(0);
+    }    
+
+    sockfd = socket(AF_INET, SOCK_STREAM, 0);
+    bzero(&amp;servaddr, sizeof(servaddr));
+    servaddr.sin_family = AF_INET;
+    inet_pton(AF_INET, (const char *)servip, &amp;servaddr.sin_addr);
+    servaddr.sin_port = htons(SERVPORT);    
+
+
+    ret = connect(sockfd, (struct sockaddr *)&amp;servaddr, sizeof(servaddr));
+    if(!ret)
+        printf(&quot;Connect succeed!\n&quot;);
+    else{
+        printf(&quot;Cant connect to the server:%s\n&quot;, servip);
+        exit(1);
+    }    
+
+    // recieve welcome message
+    memset(buf, 0x00, sizeof(buf));
+    recvMsg(sockfd, buf, &amp;len);
+    printf(&quot;%s\n&quot;, buf);    
+
+    // login
+    login_cli(sockfd);    
+
+    printf(&quot;---------------------------------------------------------------\n&quot;);
+
+    pid = fork();
+    if(pid&lt;0){
+        printf(&quot;fork err\n&quot;);
+        exit(1);
+    }else if(pid&gt;0){
+        while(fgets(buf, MAXLEN, stdin)){
+            memset(&amp;buf[strlen(buf)-1], 0, 1); // delete the last \n
+            sendMsg(sockfd, buf, strlen(buf));
+        }
+    }else{
+        while(1){
+            memset(buf2, 0x00, sizeof(buf2));
+            if(recvMsg(sockfd, buf2, &amp;len)&lt;0){
+                printf(&quot;Server [%s] closed connection\n&quot;, servip);
+                break;
+            }
+            printf(&quot;&gt; %s\n&quot;, buf2);
+        }
+    }
+    close(sockfd);    
+
+    return 0;
+}
+</code></pre><h1 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h1><pre><code>- 目前已知的几个缺陷：
+    - 客户端终端输入输出在一起，有时候输入时会有输出冒出来
+    - Ctrl-C kill掉服务端后，建立的消息队列没有删除
+</code></pre>
       
     </div>
 
@@ -425,9 +633,9 @@ Just like a littlekid大学的时候，因为我长的比较年轻，我有个�
       
         <div class="post-tags">
           
-            <a href="/tags/杂感/" rel="tag">#杂感</a>
+            <a href="/tags/Linux/" rel="tag">#Linux</a>
           
-            <a href="/tags/童年/" rel="tag">#童年</a>
+            <a href="/tags/C/" rel="tag">#C</a>
           
         </div>
       
@@ -436,17 +644,13 @@ Just like a littlekid大学的时候，因为我长的比较年轻，我有个�
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/05/23/hello-world/" rel="next" title="Markdown简明教程">
-                <i class="fa fa-chevron-left"></i> Markdown简明教程
+              <a href="/2016/06/26/近期学习计划/" rel="next" title="近期学习计划">
+                <i class="fa fa-chevron-left"></i> 近期学习计划
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/05/25/文章备份链接/" rel="prev" title="文章备份链接">
-                文章备份链接 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -472,8 +676,8 @@ Just like a littlekid大学的时候，因为我长的比较年轻，我有个�
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/05/25/永远像个孩子/"
-           data-title="永远像个孩子" data-url="http://yoursite.com/2016/05/25/永远像个孩子/">
+      <div class="ds-thread" data-thread-key="2016/10/28/一个C写的简易聊天室/"
+           data-title="一个C写的简易聊天室" data-url="http://yoursite.com/2016/10/28/一个C写的简易聊天室/">
       </div>
     
   </div>
@@ -618,7 +822,7 @@ Just like a littlekid大学的时候，因为我长的比较年轻，我有个�
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#博客"><span class="nav-number">1.</span> <span class="nav-text">博客</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Just-like-a-littlekid"><span class="nav-number">2.</span> <span class="nav-text">Just like a littlekid</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#技术"><span class="nav-number">1.</span> <span class="nav-text">技术</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#设计"><span class="nav-number">2.</span> <span class="nav-text">设计</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Server-Client"><span class="nav-number">2.1.</span> <span class="nav-text">Server/Client</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#结构定义"><span class="nav-number">2.2.</span> <span class="nav-text">结构定义</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#模块"><span class="nav-number">3.</span> <span class="nav-text">模块</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#实现"><span class="nav-number">4.</span> <span class="nav-text">实现</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#其他"><span class="nav-number">5.</span> <span class="nav-text">其他</span></a></li></ol></div>
             
           </div>
         </section>
