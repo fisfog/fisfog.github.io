@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2016-12-24T12:58:23.326Z</updated>
+  <updated>2017-12-02T05:33:29.711Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -14,6 +14,103 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>暴风雨计划</title>
+    <link href="http://yoursite.com/2017/12/02/%E6%9A%B4%E9%A3%8E%E9%9B%A8%E8%AE%A1%E5%88%92/"/>
+    <id>http://yoursite.com/2017/12/02/暴风雨计划/</id>
+    <published>2017-12-01T16:00:00.000Z</published>
+    <updated>2017-12-02T05:33:29.711Z</updated>
+    
+    <content type="html">&lt;blockquote&gt;
+&lt;p&gt;Tempest（暴风雨）-Bob Dylen。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;Intro&quot;&gt;&lt;a href=&quot;#Intro&quot; class=&quot;headerlink&quot; title=&quot;Intro&quot;&gt;&lt;/a&gt;Intro&lt;/h2&gt;&lt;p&gt;此计划的目标是成为一个更好的人，顺便赚点小钱。&lt;/p&gt;
+&lt;h2 id=&quot;健身-amp-饮食&quot;&gt;&lt;a href=&quot;#健身-amp-饮食&quot; class=&quot;headerlink&quot; title=&quot;健身&amp;amp;饮食&quot;&gt;&lt;/a&gt;健身&amp;amp;饮食&lt;/h2&gt;&lt;h3 id=&quot;目标&quot;&gt;&lt;a href=&quot;#目标&quot; class=&quot;headerlink&quot; title=&quot;目标&quot;&gt;&lt;/a&gt;目标&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;维持现有体重（116左右）&lt;/li&gt;
+&lt;li&gt;减少体脂率&lt;/li&gt;
+&lt;li&gt;腹肌成型&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&quot;计划&quot;&gt;&lt;a href=&quot;#计划&quot; class=&quot;headerlink&quot; title=&quot;计划&quot;&gt;&lt;/a&gt;计划&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;健身计划（2017-12-02-）&lt;ul&gt;
+&lt;li&gt;每周运动4~5天，平均时常40min，同步至keep&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;饮食规划&lt;ul&gt;
+&lt;li&gt;减少油脂摄入，每月最多吃2次垃圾食品&lt;/li&gt;
+&lt;li&gt;每天一个水果&lt;/li&gt;
+&lt;li&gt;每天两勺芝麻糊&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&quot;生活-amp-学习&quot;&gt;&lt;a href=&quot;#生活-amp-学习&quot; class=&quot;headerlink&quot; title=&quot;生活&amp;amp;学习&quot;&gt;&lt;/a&gt;生活&amp;amp;学习&lt;/h2&gt;&lt;h3 id=&quot;目标-1&quot;&gt;&lt;a href=&quot;#目标-1&quot; class=&quot;headerlink&quot; title=&quot;目标&quot;&gt;&lt;/a&gt;目标&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;编程相关：从量化交易赚钱。&lt;/li&gt;
+&lt;li&gt;吉他&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&quot;计划-1&quot;&gt;&lt;a href=&quot;#计划-1&quot; class=&quot;headerlink&quot; title=&quot;计划&quot;&gt;&lt;/a&gt;计划&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;每天1~2小时的工作外编程时间。&lt;/li&gt;
+&lt;li&gt;2~3周一本业余书籍或者1~2月专业书籍。&lt;/li&gt;
+&lt;li&gt;平均每日半小时的吉他练习，1~2周练习一首曲子。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&quot;执行监督&quot;&gt;&lt;a href=&quot;#执行监督&quot; class=&quot;headerlink&quot; title=&quot;执行监督&quot;&gt;&lt;/a&gt;执行监督&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;每周总结周报&lt;/li&gt;
+&lt;li&gt;吉他可以录制练习曲&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;Tempest（暴风雨）-Bob Dylen。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;Intro&quot;&gt;&lt;a href=&quot;#Intro&quot; class=&quot;headerlink&quot; title=&quot;Intro&quot;&gt;&lt;/a&gt;Intro&lt;/h2&gt;&lt;p&gt;
+    
+    </summary>
+    
+      <category term="生活" scheme="http://yoursite.com/categories/%E7%94%9F%E6%B4%BB/"/>
+    
+    
+      <category term="计划" scheme="http://yoursite.com/tags/%E8%AE%A1%E5%88%92/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>zlib压缩用法</title>
+    <link href="http://yoursite.com/2017/02/25/zlib%E5%8E%8B%E7%BC%A9%E7%94%A8%E6%B3%95/"/>
+    <id>http://yoursite.com/2017/02/25/zlib压缩用法/</id>
+    <published>2017-02-24T16:00:00.000Z</published>
+    <updated>2017-02-25T08:45:39.443Z</updated>
+    
+    <content type="html">&lt;h1 id=&quot;Info&quot;&gt;&lt;a href=&quot;#Info&quot; class=&quot;headerlink&quot; title=&quot;Info&quot;&gt;&lt;/a&gt;Info&lt;/h1&gt;&lt;p&gt;本文简要介绍数据压缩库zlib的C api使用方法。&lt;/p&gt;
+&lt;p&gt;本文部分C实例源码来自&lt;a href=&quot;http://www.zlib.net/zlib_how.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;zlib usage example&lt;/a&gt;。&lt;/p&gt;
+&lt;h1 id=&quot;相关宏&quot;&gt;&lt;a href=&quot;#相关宏&quot; class=&quot;headerlink&quot; title=&quot;相关宏&quot;&gt;&lt;/a&gt;相关宏&lt;/h1&gt;&lt;pre&gt;&lt;code&gt;#define CHUNK 1024*128
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;我们设置一个CHUNK值来表示每次送给zlib例程的缓冲区大小，这个缓冲区越大算法效率越高，不过用的内存也越多。&lt;/p&gt;
+&lt;h1 id=&quot;压缩函数deflate&quot;&gt;&lt;a href=&quot;#压缩函数deflate&quot; class=&quot;headerlink&quot; title=&quot;压缩函数deflate&quot;&gt;&lt;/a&gt;压缩函数deflate&lt;/h1&gt;&lt;p&gt;先上例子&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;21&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;22&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;23&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;24&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;25&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;26&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;27&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;28&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;29&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;30&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;31&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;32&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;33&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;34&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;35&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;36&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;37&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;38&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;39&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;int def(FILE *source, FILE *dest, int level)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	int ret, flush;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	unsigned have;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	z_stream strm;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	unsigned char in[CHUNK];&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	unsigned char out[CHUNK];&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	strm.zalloc = Z_NULL;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	strm.zfree = Z_NULL;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	strm.opaque = Z_NULL;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	ret = deflateInit(&amp;amp;strm, level);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	if(ret != Z_OK)&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;		return ret;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	do&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;		strm.avail_in = fread(in, 1, CHUNK, source);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;		if(ferror(source))&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;			(void)deflateEnd(&amp;amp;strm);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;			return Z_ERRNO;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;		&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;		flush = feof(source)? Z_FINISH: Z_NO_FLUSH;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;		strm.next_in = in;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;		do&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;			strm.avail_out = CHUNK;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;			strm.next_out = out;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;			ret = deflate(&amp;amp;strm, flush);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;			have = CHUNK - strm.avail_out;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;			if(fwrite(out, 1, have, dest)!=have||ferror(dest))&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;				(void)deflateEnd(&amp;amp;strm);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;				return Z_ERRNO;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;			&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;		&amp;#125;while(strm.avail_out == 0);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&amp;#125;while(flush != Z_FINISH);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	(void)deflateEnd(&amp;amp;strm);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	return Z_OK;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;ret: 返回值。&lt;/li&gt;
+&lt;li&gt;flush: 用来跟踪deflate()函数的当前冲洗状态，如果读到文件末尾则deflate冲洗完成。&lt;/li&gt;
+&lt;li&gt;have: deflate函数返回的数据量。&lt;/li&gt;
+&lt;li&gt;strm: 传入zlib例程的z_stream结构。&lt;/li&gt;
+&lt;li&gt;in,out: 输入和输出缓冲区。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;-&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;Info&quot;&gt;&lt;a href=&quot;#Info&quot; class=&quot;headerlink&quot; title=&quot;Info&quot;&gt;&lt;/a&gt;Info&lt;/h1&gt;&lt;p&gt;本文简要介绍数据压缩库zlib的C api使用方法。&lt;/p&gt;
+&lt;p&gt;本文部分C实例源码来自&lt;a href=&quot;http://w
+    
+    </summary>
+    
+      <category term="programing" scheme="http://yoursite.com/categories/programing/"/>
+    
+    
+      <category term="Linux" scheme="http://yoursite.com/tags/Linux/"/>
+    
+      <category term="C" scheme="http://yoursite.com/tags/C/"/>
+    
+  </entry>
   
   <entry>
     <title>every thing will be awful</title>
